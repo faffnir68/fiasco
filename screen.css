@@ -169,9 +169,67 @@ img {
 .block-centered {
     text-align: center;
 }
+/*///////////////////////////////////////////////*/
+/* Food menu presentation */
+/**/
 
+.food-menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.food-menu a {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #383838;
+    letter-spacing: 2px;
+    line-height: 1.25rem;
+    height: 1.25rem;
+    transition: color 0.3s;
+}
+
+.food-menu .active {
+    position: relative;
+}
+
+.food-menu .active::after {
+    content: '';
+    display: block;
+    padding-bottom: 3px;
+    border-bottom: #C89446 1px solid;
+}
+
+.food-menu a:hover {
+    color: #C89446;
+}
+
+.dish-items {
+    margin: 0 auto;
+    max-width: 660px;
+    padding: 20px 20px;
+}
+
+.dish-img {
+    margin: 0 auto;
+    max-width: 160px;
+}
+
+.dish-details p {
+    font-size: 0.875rem;
+}
+
+.dish-details .dish-price {
+    font-family: 'Pinyon Script', serif;
+    font-size: 2.5rem;
+    color: #C89446;
+    display: block;
+    text-transform: none;
+    margin: 0 0 0 0;
+}
 
 /* Media screen pour 920px mini */
+/*************************************************************************************************/
 
 @media only screen and (min-width: 600px) {
     html {
@@ -295,4 +353,22 @@ img {
             top 95px right 0px url('img/oranges.jpg') no-repeat,
             top 64 0px left 0px url('img/spices.jpg') no-repeat;
         }
+
+    .dish-items {
+        display: flex;
+        justify-content: space-evenly;
+        max-width: 100%;
+    }
+
+    .dish-item {
+        display: flex;
+    }
+
+    .dish-img {
+        flex: none;
+    }
+
+    .dish-details {
+        width: 300px;
+    }
 }
