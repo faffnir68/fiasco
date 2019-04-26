@@ -243,6 +243,12 @@ img {
     margin: 0 0 30px auto;
 }
 
+.container {
+    padding: 0 20px;
+}
+
+
+
 /* Media screen pour 920px mini */
 /*************************************************************************************************/
 
@@ -429,5 +435,26 @@ img {
         width: 430px;
         height: 430px;
         border: 1px solid #C89446;
+    }
+
+    .block-chief {
+        display: flex;
+        align-items: center;
+        max-width: 1150px;
+        margin-bottom: 0px;
+    }
+
+    .block-chief .block-img::before {
+        display: none;
+    }
+
+    .block-chief .block-img {
+        flex: none;
+        width: 400px;
+        order: 2
+    }
+
+    .block-chief .block-body {
+        order: 1;
     }
 }
