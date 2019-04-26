@@ -111,6 +111,12 @@ img {
     max-width: 960px;
 }
 
+.container-dishes {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1150px;
+}
+
 .block {
     margin: 0 0 50px 0;
 }
@@ -169,6 +175,13 @@ img {
 .block-centered {
     text-align: center;
 }
+
+.block-centered .block-body {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /*///////////////////////////////////////////////*/
 /* Food menu presentation */
 /**/
@@ -177,6 +190,7 @@ img {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin: 40px 0;
 }
 
 .food-menu a {
@@ -206,7 +220,7 @@ img {
 
 .dish-items {
     margin: 0 auto;
-    max-width: 660px;
+    /*max-width: 660px;*/
     padding: 20px 20px;
 }
 
@@ -215,17 +229,18 @@ img {
     max-width: 160px;
 }
 
-.dish-details p {
+.dish-item p {
     font-size: 0.875rem;
+    margin-bottom: 0;
 }
 
-.dish-details .dish-price {
+.dish-item .dish-price {
     font-family: 'Pinyon Script', serif;
     font-size: 2.5rem;
     color: #C89446;
     display: block;
     text-transform: none;
-    margin: 0 0 0 0;
+    margin: 0 0 30px auto;
 }
 
 /* Media screen pour 920px mini */
@@ -284,6 +299,10 @@ img {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .block-last {
+        margin-bottom: 68px;
     }
 
     .block-img {
@@ -351,24 +370,64 @@ img {
     .home-section {
         background: 
             top 95px right 0px url('img/oranges.jpg') no-repeat,
-            top 64 0px left 0px url('img/spices.jpg') no-repeat;
+            top 64px left 0px url('img/spices.jpg') no-repeat;
         }
 
     .dish-items {
         display: flex;
-        justify-content: space-evenly;
-        max-width: 100%;
+        justify-content: space-between;
+        padding: 85px 0 85px 0;
+        flex-wrap: wrap;
+        position: relative;
     }
 
     .dish-item {
-        display: flex;
+        width: calc(50% - 40px);
+        position: relative;
+        padding-left: 192px;
+        margin-bottom: 65px;
+    }
+
+    .dish-item h3 {
+        margin: 0;
+        background: #fff;
+    }
+
+    .dish-item p {
+        background: #fff;
+    }
+
+    p.dish-price {
+        background: #fff;
+        width: 100px;
+    }
+
+    .dish-item:nth-child(even) {
+        text-align: right;
+        padding-left: 0;
+        padding-right: 192px;
+    }
+
+    .dish-item:nth-child(even) .dish-img {
+        left: auto;
+        right: 0;
     }
 
     .dish-img {
-        flex: none;
+        width: 160px;
+        position: absolute;
+        left: 0;
     }
 
-    .dish-details {
-        width: 300px;
+    .dish-items::before {
+        content: '';
+        position: absolute;
+        top: 95px;
+        left: 50%;
+        transform: translate(-50%, 0) rotate(45deg);
+        display: block;
+        width: 430px;
+        height: 430px;
+        border: 1px solid #C89446;
     }
 }
