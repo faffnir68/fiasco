@@ -7,6 +7,12 @@
     <title>The Fiasco</title>
     <link href="https://fonts.googleapis.com/css?family=Pinyon+Script|Source+Sans+Pro:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="screen.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
 </head>
 <body>
     <header class="header">
@@ -39,7 +45,9 @@
                     <p>
                         Attending a trade show can be a very effective method of promoting your company and its products. And one of the most effective ways to optimize your trade show display and increase traffic to your booth is through the use of banner stands. 
                     </p>
-                    <a href="recipe.html" class="more">See more</a>
+                    <div class="more">
+                            <a href="recipe.html">See more</a>
+                    </div>
                 </div>
             </div>
             <div class="block block-right">
@@ -51,7 +59,9 @@
                     <p>
                         Classified advertising is a form of advertising that is particularly common in newspapers and other periodicals. A classified is usually textually based and can consist of as little as the type of item being sold, and a contact number to call for more information
                     </p>
-                    <a href="recipe.html" class="more">See more</a>
+                    <div class="more">
+                        <a href="recipe.html">See more</a>
+                    </div>
                 </div>
             </div>
             <div class="block-centered block-last">
@@ -119,7 +129,9 @@
                         <h2 class="title"><span>Chief</span> Meet our Executive Chef, Christian Jacob</h2>
                         <p>If you are considering purchasing a new grill, or barbecue, you will be faced with a multitude of options to choose between. However, there is one choice which you will need to make fairly quickly in your quest for the perfect grill for you. That decision is whether to buy a charcoal or gas grill.</p>
                         <p>Wow I have a hankering for some really good grill roasted chicken, the melt in your mouth variety with some fresh homemade salsa slathered right on top.</p>
-                        <a href="recipe.html" class="more">See the cooks</a>
+                        <div class="more">
+                            <a href="recipe.html">See the cooks</a>
+                        </div>
                     </div>
             </div>
         </div>
@@ -189,8 +201,36 @@
                     </p>
                 </div>
             </div>
-            <a href="#" class="more">Go to our blog</a>
+            <div class="more">
+                <a href="#" >Go to our blog</a>
+            </div>
         </div>
     </section>
+    <div class="map" id="map">
+    </div>
+
+    <script>
+            // Creating map options
+            var mapOptions = {
+               center: [48.880833, 2.333694],
+               zoom: 10
+            }
+            // Creating a map object
+            var map = new L.map('map', mapOptions);
+            
+            // Creating a Layer object
+            var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+            
+            // Adding layer to the map
+            map.addLayer(layer);
+            
+            // Creating a marker
+            var marker = L.marker([48.880833, 2.3336941]);
+            
+            // Adding marker to the map
+            marker.bindPopup('The Fiasco<br>15-7 Rue Chaptal<br> 75009 Paris<br> France').openPopup();
+            marker.addTo(map);
+         </script>
+
 </body>
 </html>
