@@ -247,7 +247,138 @@ img {
     padding: 0 20px;
 }
 
+/************************************************
+Reservation styling
+*/
 
+.reservation {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.92), 
+        rgba(54, 54, 54, 0.5) 39.24%, 
+        rgba(28, 28, 28, 0.4)),
+        url('./img/reservation.jpg') center center / cover no-repeat;
+        color: rgba(255, 255, 255, 0.6));
+        padding: 50px 0;
+}
+
+.reservation-title {
+    color: #fff;
+}
+
+.reservation input, .reservation select {
+    padding: 0 0.5rem;
+    width: 100%;
+    margin-bottom: 15px;
+    border: solid 1px #6f6f6f;
+    background: transparent;
+    text-transform: uppercase;
+    height: 40px;
+    color: #FFF;
+    font-family: 'Source Sans Pro', serif;
+    font-size: 0.875rem;
+    transition: background .3s, border-color .3s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.reservation select, .reservation input[type=date] {
+    background: no-repeat right 0.5rem center url('img/select.svg');
+}
+
+.reservation input:focus, .reservation select:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #C89446;
+}
+
+select option {
+    color: #000;
+}
+
+.reservation .button {
+    width: 100%;
+}
+
+.button {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #FFF;
+    background: #C89446;
+    border: none;
+    border: solid 1px transparent;
+    padding: 11px 1rem;
+    font-family: 'Source Sans Pro', serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: transparent;
+    border: solid 1px #C89446;
+}
+
+.reservation .block-centered .block-body {
+    max-width: 825px;
+}
+
+.reservation p {
+    max-width: 625px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*****************************************************************
+    RECIPES LIST
+*/
+
+.recipes {
+    padding: 50px 0;
+}
+
+.recipes-list {
+    font-weight: 300;
+    font-size: 1.125rem;
+    max-width: 920px;
+    margin-left: auto;
+}
+
+.recipes-list-item {
+    display: flex;
+    border-bottom: solid 1px #F2F2F2;
+    margin-top: 1em;
+}
+
+.recipes-list-item:last-child {
+    border-bottom: 0;
+}
+
+.recipes-list-item p{
+    margin-top: 0;
+}
+
+.recipes-list-item strong {
+    color: #383838;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.recipes-date {
+    width: 60px;
+    flex: none;
+    line-height: 1;
+}
+
+.recipes-date strong{
+    font-size: 1.75rem;
+    line-height: 1.2;
+    display: block;
+}
+
+.recipes .more {
+    display: block;
+    text-align: right;
+    margin-top: 60px;
+}
 
 /* Media screen pour 920px mini */
 /*************************************************************************************************/
@@ -456,5 +587,59 @@ img {
 
     .block-chief .block-body {
         order: 1;
+    }
+
+    .reservation-form {
+        padding: 100px 0;
+    }
+
+    .reservation-form-row {
+        margin: 64px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .reservation-form-row input, .reservation-form-row select {
+        width: calc(33.33% - 20px);
+        margin-bottom: 0;
+        letter-spacing: 2px;
+    }
+
+    .reservation .button {
+        width: calc(33.33% - 20px);
+        letter-spacing: 2px;
+    }
+
+    /************************
+    RECIPES SECTION
+    */
+
+    .recipes .container {
+        margin: 0 auto;
+        max-width: 1120px;
+    }
+
+    .recipes {
+        padding: 60px 0;
+    }
+
+    .recipes .title {
+        text-align: right;
+    }
+
+    .recipes .container > p {
+        text-align: right;
+        max-width: 716px;
+        margin-left: auto;
+    }
+
+    .recipes-date {
+        width: 95px;
+        flex: none;
+    }
+
+    .recipes-list {
+        margin-top: 64px;
+        margin-bottom: 64px;    
     }
 }
