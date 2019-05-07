@@ -400,6 +400,28 @@ select option {
     height: 360px;
 }
 
+.custom .leaflet-popup-tip,
+.custom .leaflet-popup-content-wrapper {
+    background: #C99649;
+    color: #ffffff;
+    border-radius: 0px;
+    font-family: 'Source Sans Pro', serif;
+    font-size: 1rem;
+}
+
+.leaflet-popup-content {
+    padding: 0px 30px;
+    font-size: 1rem;
+}
+
+.custom .leaflet-popup-tip,
+.custom .leaflet-popup-content-wrapper strong {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 /* Media screen pour 920px mini */
 /*************************************************************************************************/
 
