@@ -199,7 +199,7 @@ img {
 
 .food-menu {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 40px 0;
 }
@@ -395,6 +395,8 @@ select option {
     margin-top: 60px;
 }
 
+/* MAP */
+
 .map {
     width: 100%;
     height: 360px;
@@ -421,6 +423,28 @@ select option {
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+
+/* FOOTER */
+
+footer {
+    background: #383838;
+    padding: 40px 0;
+    font-weight: 300;
+    color: #fff;
+}
+
+.footer-column {
+    margin-bottom: 2rem;
+}
+
+.footer-title {
+    color: #C99649;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', serif;
+    margin-bottom: 1.25em;
+    font-weight: bold;
+}
+
 
 /* Media screen pour 920px mini */
 /*************************************************************************************************/
@@ -701,4 +725,58 @@ select option {
     .map {
         height: 460px;
     }
+
+    footer {
+        background: #383838 url('img/splash.png') right 0 bottom 0 no-repeat;
+    }
+
+    footer .container {
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: 1150px;
+    }
+
+    .footer-columns {
+        display: flex;
+        justify-content: space-between;
+        /*margin: 0 auto;
+        padding: 0 20px;
+        max-width: 1150px;*/
+    }
+    
+    .footer-column {
+        width: 290px;
+        margin-right: 50px;
+     }
+ 
+     .footer-column:first-child {
+         width: 450px;
+     }
+
+     .footer-column:last-child {
+         margin-right: 0;
+         flex: none;
+     }
+
+     .footer ul {
+         padding-left: 0;
+         list-style: none;
+     }
+
+     .footer ul li::before {
+         content: '- ';
+     }
+
+     .footer a {
+         text-decoration: underline;
+     }
+
+     .footer a:hover {
+        color: #C99649;
+     }
+
+     .footer-credit span {
+        font-size: 0.9em;
+        font-weight: bold;
+     }
 }
