@@ -181,7 +181,9 @@
                         <strong>29</strong> SEP
                     </div>
                     <p>
+                        <a href="recipe1.html">
                         Chopped, sliced or wedged, hard-cooked eggs are the basis of egg salad and add protein and a happy glow to tossed and composed salads and casseroles.
+                        </a>
                     </p>
                 </div>
                 <div class="recipes-list-item">
@@ -208,6 +210,34 @@
     </section>
     <div class="map" id="map">
     </div>
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <div class="footer-title">The Fiasco</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum, sint corporis nostrum, possimus unde eos vitae eius quasi saepe.</p>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-title">Contact info</div>
+                    <p>1234 Altschul, New York, NY 10027-0000<br>
+                            +1 987 654 3210<br>
+                            <a href="mailto:contact@thefiasco.com">contact@thefiasco.com</a>
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-title">Opening hours</div>
+                    <ul>
+                        <li>Monday to Friday | 10:00 AM - 11:00 PM</li>
+                        <li>Monday to Friday | 10:00 AM - 11:00 PM</li>
+                        <li>Monday to Friday | 10:00 AM - 11:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-credit">
+                <span>2018 The Fiasco.</span> All rights reserved.
+            </div>
+        </div>
+    </footer>
 
     <script>
             // Creating map options
@@ -217,18 +247,41 @@
             }
             // Creating a map object
             var map = new L.map('map', mapOptions);
+            map.scrollWheelZoom.disable();
             
             // Creating a Layer object
             var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+            var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 19
+            });
             
             // Adding layer to the map
-            map.addLayer(layer);
+            map.addLayer(CartoDB_Positron);
             
+            // Customizing marker icon
+            var redIcon = new L.Icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+            });
+
             // Creating a marker
-            var marker = L.marker([48.880833, 2.3336941]);
-            
+            var marker = L.marker([48.880833, 2.3336941], {icon: redIcon}).addTo(map);
+
+            // Specify popup options
+            var customOptions = {
+                'maxWidth': '500',
+                'className': 'custom'
+            }
+
             // Adding marker to the map
-            marker.bindPopup('The Fiasco<br>15-7 Rue Chaptal<br> 75009 Paris<br> France').openPopup();
+            marker.bindPopup('<strong>The Fiasco</strong><br>15-7, Rue Chaptal, 75009 Paris <br>France', customOptions).openPopup();
             marker.addTo(map);
          </script>
 

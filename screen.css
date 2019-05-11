@@ -35,6 +35,8 @@ img {
     color: #fff;
 }
 
+
+
 .topbar {
     padding: 18px 20px;
     font-size: .875rem;
@@ -199,7 +201,7 @@ img {
 
 .food-menu {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 40px 0;
 }
@@ -267,7 +269,7 @@ Reservation styling
         rgba(54, 54, 54, 0.5) 39.24%, 
         rgba(28, 28, 28, 0.4)),
         url('./img/reservation.jpg') center center / cover no-repeat;
-        color: rgba(255, 255, 255, 0.6));
+        color: rgba(255, 255, 255, 0.6);
         padding: 50px 0;
 }
 
@@ -363,6 +365,10 @@ select option {
     padding-bottom: 1em;
 }
 
+.recipes-list-item a:hover {
+    text-decoration: underline;
+}
+
 .recipes-list-item:last-child {
     border-bottom: 0;
 }
@@ -395,10 +401,162 @@ select option {
     margin-top: 60px;
 }
 
+/* MAP */
+
 .map {
     width: 100%;
     height: 360px;
 }
+
+.custom .leaflet-popup-tip,
+.custom .leaflet-popup-content-wrapper {
+    background: #C99649;
+    color: #ffffff;
+    border-radius: 0px;
+    font-family: 'Source Sans Pro', serif;
+    font-size: 1rem;
+}
+
+.leaflet-popup-content {
+    padding: 0px 30px;
+    font-size: 1rem;
+}
+
+.custom .leaflet-popup-tip,
+.custom .leaflet-popup-content-wrapper strong {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* FOOTER */
+
+footer {
+    background: #383838;
+    padding: 40px 0;
+    font-weight: 300;
+    color: #fff;
+}
+
+.footer-column {
+    margin-bottom: 2rem;
+}
+
+.footer-title {
+    color: #C99649;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', serif;
+    margin-bottom: 1.25em;
+    font-weight: bold;
+}
+
+.header-recipe1 {
+    background: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0.92), 
+        rgba(54, 54, 54, 0.5) 39.24%, 
+        rgba(28, 28, 28, 0.4)),
+        url('./img/salad-chicken.jpg') center center / cover no-repeat;
+    color: #fff;
+}
+
+
+.block-ingredients {
+    border: 1px #C89446 solid;
+    padding: 35px 20px;        
+    font-weight: 600;  
+    color: #383838;
+}
+
+.block-ingredients ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.block-ingredients li {
+    padding: 5px 0;
+}
+
+.block-ingredients span {
+    width: 35px;
+    text-align: right;
+    display: inline-block;
+    margin-right: 20px;     
+    font-weight: 300;  
+}
+
+.section-overflow {
+    padding: 20px 0;
+}
+
+.block-video img{
+    box-shadow: 0 0 30px rgba(128,128,128, 0.5);
+    opacity: 0.6;
+    display: block;
+    transition: opacity .3s;
+}
+
+.block-video {
+    position: relative;
+    background: #383838;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-video::after {
+    content: '';
+    background: url('img/play.png') center center no-repeat;
+    width: 62px;
+    height: 62px;
+    position: absolute;
+    top: calc(50% - 31px);
+    right: 0;
+    bottom: 0;
+    left: calc(50% - 31px);
+    transition: transform .3s;
+}
+
+.block-video:hover::after {
+    transform: scale(0.8);
+}
+
+.block-video:hover img {
+    opacity: .9;
+}
+
+.recipes-mosaic {
+    margin-bottom: -60px;
+}
+
+.pagination {
+    list-style: none;
+    margin: 30px 0;
+    padding: 0;
+    text-align: center;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.pagination li a {
+    border: solid #C89446 1px;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 7px;
+    text-indent: -3000px;
+    overflow: hidden;
+    transition: background-color .3s;
+    margin: 0 10px;
+}
+
+.pagination a.active, .pagination a:hover {
+    background: #C89446;
+}
+
 
 /* Media screen pour 920px mini */
 /*************************************************************************************************/
@@ -563,13 +721,13 @@ select option {
         width: 100px;
     }
 
-    .dish-item:nth-child(even) {
+    .dish-items .dish-item:nth-child(even) {
         text-align: right;
         padding-left: 0;
         padding-right: 192px;
     }
 
-    .dish-item:nth-child(even) .dish-img {
+    .dish-items .dish-item:nth-child(even) .dish-img {
         left: auto;
         right: 0;
     }
@@ -678,5 +836,105 @@ select option {
 
     .map {
         height: 460px;
+    }
+
+    footer {
+        background: #383838 url('img/splash.png') right 0 bottom 0 no-repeat;
+    }
+
+    footer .container {
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: 1150px;
+    }
+
+    .footer-columns {
+        display: flex;
+        justify-content: space-between;
+        /*margin: 0 auto;
+        padding: 0 20px;
+        max-width: 1150px;*/
+    }
+    
+    .footer-column {
+        width: 290px;
+        margin-right: 50px;
+     }
+ 
+     .footer-column:first-child {
+         width: 450px;
+     }
+
+     .footer-column:last-child {
+         margin-right: 0;
+         flex: none;
+     }
+
+     .footer ul {
+         padding-left: 0;
+         list-style: none;
+     }
+
+     .footer ul li::before {
+         content: '- ';
+     }
+
+     .footer a {
+         text-decoration: underline;
+     }
+
+     .footer a:hover {
+        color: #C99649;
+     }
+
+     .footer-credit span {
+        font-size: 0.9em;
+        font-weight: bold;
+     }
+
+     .block-ingredients {
+         width: 350px;
+        padding: 35px 40px;
+    }
+    
+    .block-ingredients ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .block-ingredients li {
+        padding: 10px 0;
+    }
+    
+    .block-ingredients span {
+        width: 35px;
+        margin-right: 20px;   
+    }
+
+    .section-overflow {
+        padding: 0;
+        margin-top: -20px;
+    }
+
+    .block-right .block-video {
+        order: 2;
+    }
+
+    .recipes-mosaic{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .recipes-mosaic .dish-item {
+        padding-left: 150px;
+        width: calc(50% - 25px);   
+        font-size: 0.875rem;
+        margin-bottom: 60px;
+    }
+
+    .recipes-mosaic .dish-img {
+        width: 125px;
     }
 }
